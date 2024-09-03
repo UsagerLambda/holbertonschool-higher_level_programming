@@ -7,7 +7,6 @@ if number < 0: # si number est négatif
     if number % 10 > 0:
         last_digit -= 10 # ont soustrait 10 au dernier nombre pour avoir la valeur correct
 
-
 if last_digit == 0:
     print(f"Last digit of {number} is {last_digit} and is 0")
 elif last_digit > 5:
