@@ -10,4 +10,4 @@ def uppercase(str):
         else:
             string += i  # Si le caractère n'est pas une minuscule,
             # on l'ajoute tel quel dans la variable 'string'
-    print(string)
+    print("{}".format(string))
