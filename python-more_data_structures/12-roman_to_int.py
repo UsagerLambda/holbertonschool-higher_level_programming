@@ -5,6 +5,9 @@ def roman_to_int(roman_string):
     result = 0
     length = len(roman_string)
 
+    if len(roman_string) < 0 or roman_string is None:
+        return 0
+
     for i in range(length):
         value = roman[roman_string[i]]
 
