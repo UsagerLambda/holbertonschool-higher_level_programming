@@ -1,32 +1,47 @@
 >>> add_integer = __import__("0-add_integer").add_integer
->>> add_integer(1, 2)
-3
->>> add_integer(100, -2)
-98
->>> add_integer(2)
-100
->>> add_integer(100.3, -2)
-98
->>> add_integer(4, "School")
+
+>>> add_integer(7, 14)
+21
+
+>>> add_integer(5.67, 9)
+14
+
+>>> add_integer(3.5, 6.8)
+9
+
+>>> add_integer(4.9, -2)
+2
+
+>>> add_integer(8)
+106
+
+>>> add_integer("Example", 11)
 Traceback (most recent call last):
-    ...
-TypeError: b must be an integer
->>> add_integer(None)
-Traceback (most recent call last):
-    ...
+...
 TypeError: a must be an integer
 
-# Test OverflowError: Ceci pourrait se produire si tu avais des limites sur la taille des entiers
->>> import sys
->>> max_int = sys.maxsize
->>> add_integer(max_int, 1)
+>>> add_integer(12, "Test")
 Traceback (most recent call last):
 ...
-OverflowError: integer addition overflow
+TypeError: b must be an integer
 
-# Test ValueError: Ceci pourrait être simulé si add_integer ne vérifie pas les types d'arguments correctement
->>> add_integer("string", "another_string")
+>>> add_integer("Hello", "World")
 Traceback (most recent call last):
 ...
-ValueError: invalid literal for int() with base 10: 'string'
+TypeError: a must be an integer
+
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('NaN'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
 
