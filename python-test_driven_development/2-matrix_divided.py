@@ -1,6 +1,21 @@
 #!/usr/bin/python3
 
 def matrix_divided(matrix, div):
+    """
+    Divides all elements of a matrix by a given number.
+
+    Parameters:
+    matrix (list of lists of int/float): A matrix (list of lists) where each element is an integer or float.
+    div (int/float): The number by which each element of the matrix will be divided.
+
+    Returns:
+    list of lists of float: A new matrix where each element is divided by `div` and rounded to 2 decimal places.
+
+    Raises:
+    TypeError: If `matrix` is not a list of lists, or if any element of `matrix` is not an integer or float,
+               or if `div` is not a number.
+    ZeroDivisionError: If `div` is zero, infinity, or NaN (Not a Number).
+    """
     type_error = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
         raise TypeError(type_error)
