@@ -14,4 +14,6 @@ def text_indentation(text):
         if text[i] in ".?:":
             new_text += "\n\n"
             skip = True
+        else:
+            skip = False
     print(new_text)
