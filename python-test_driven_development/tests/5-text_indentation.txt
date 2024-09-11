@@ -1,14 +1,41 @@
 >>> text_indentation = __import__("5-text_indentation").text_indentation
 
->>> text_indentation("test")
-test
+>>> text_indentation("Hello. How are you?")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
 
->>> text_indentation(89)
+>>> text_indentation("This is a test: does it work?")
+This is a test:
+<BLANKLINE>
+does it work?
+<BLANKLINE>
+
+>>> text_indentation("What? Really?")
+What?
+<BLANKLINE>
+Really?
+<BLANKLINE>
+
+>>> text_indentation("No punctuation here")
+No punctuation here
+
+>>> text_indentation("")
+
+
+>>> text_indentation("Multiple sentences. Are they correct? Yes: they are.")
+Multiple sentences.
+<BLANKLINE>
+Are they correct?
+<BLANKLINE>
+Yes:
+<BLANKLINE>
+they are.
+<BLANKLINE>
+
+>>> text_indentation(1234)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
 
->>> text_indentation()
-Traceback (most recent call last):
-...
-TypeError: text_indentation() missing 1 required positional argument: 'text'
