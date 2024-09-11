@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 def matrix_divided(matrix, div):
+
     """
     Divides all elements of a matrix by a given number.
 
@@ -16,6 +17,7 @@ def matrix_divided(matrix, div):
                or if `div` is not a number.
     ZeroDivisionError: If `div` is zero, infinity, or NaN (Not a Number).
     """
+
     type_error = "matrix must be a matrix (list of lists) of integers/floats"
     if not isinstance(matrix, list):
         raise TypeError(type_error)
