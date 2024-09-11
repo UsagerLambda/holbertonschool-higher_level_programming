@@ -9,11 +9,9 @@ def text_indentation(text):
     for i in range(len(text)):
         if text[i] == ' ' and skip:
             continue
-        new_text += text[i]
         skip = False
+        new_text += text[i]
         if text[i] in ".?:":
             new_text += "\n\n"
             skip = True
-        else:
-            skip = False
     print(new_text)
