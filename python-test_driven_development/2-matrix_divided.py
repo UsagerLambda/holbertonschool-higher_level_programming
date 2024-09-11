@@ -1,21 +1,18 @@
 #!/usr/bin/python3
 
+"""
+Module that provides a function to divide all elements of a matrix by a given number.
+"""
+
 def matrix_divided(matrix, div):
 
     """
     Divides all elements of a matrix by a given number.
 
-    Parameters:
-    matrix (list of lists of int/float): A matrix (list of lists) where each element is an integer or float.
-    div (int/float): The number by which each element of the matrix will be divided.
+    @matrix: A matrix (list of lists) where each element is an integer or float.
+    @div: The number by which each element of the matrix will be divided.
 
-    Returns:
-    list of lists of float: A new matrix where each element is divided by `div` and rounded to 2 decimal places.
-
-    Raises:
-    TypeError: If `matrix` is not a list of lists, or if any element of `matrix` is not an integer or float,
-               or if `div` is not a number.
-    ZeroDivisionError: If `div` is zero, infinity, or NaN (Not a Number).
+    Returns: The matrix
     """
 
     type_error = "matrix must be a matrix (list of lists) of integers/floats"

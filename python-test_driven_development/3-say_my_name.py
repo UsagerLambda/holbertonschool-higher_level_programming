@@ -1,19 +1,16 @@
 #!/usr/bin/python3
 
+"""
+Module that provides a function to print a greeting with the given first and last name.
+"""
+
 def say_my_name(first_name, last_name=""):
 
     """
     Prints a greeting message with the provided first and last name.
 
-    Parameters:
-    first_name (str): The first name to be included in the greeting message.
-    last_name (str, optional): The last name to be included in the greeting message. Defaults to an empty string.
-
-    Returns:
-    None
-
-    Raises:
-    TypeError: If `first_name` or `last_name` is not a string, or if both `first_name` and `last_name` are empty.
+    @first_name: The first name to be included in the greeting message.
+    @last_name: The last name to be included in the greeting message. Defaults to an empty string.
     """
 
     if not isinstance(first_name, str):
