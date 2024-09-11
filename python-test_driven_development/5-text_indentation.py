@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
-"""
-Module that provides a function to print a text with two new lines after each `.`, `?`, and `:`.
-"""
+"""Module that provides a function to print a text
+with two new lines after each `.`, `?`, and `:`."""
+
 
 def text_indentation(text):
 
-    """
-    Prints a text with two new lines after each of the following characters: `.`, `?`, and `:`.
+    """ Prints a text with two new lines after each of
+    the following characters: `.`, `?`, and `:`.
 
-    @text: The string to be processed.
-    """
+    @text: The string to be processed. """
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
