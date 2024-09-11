@@ -4,15 +4,14 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    new_text = ""
-    i = 0
-    while i < len(text):
-        new_text += text[i]
-        if text[i] in ".?:":
-            new_text += "\n\n"
-            i += 1
-            while i < len(text) and text[i] == ' ':
-                i += 1
-            continue
-        i += 1
-    print(new_text)
+    spec = {".", "?", ":"}
+    start = 0
+    for i in range(len(text)):
+        if text[i] in spec:
+            new_text = text[start:i + 1] + "\n\n"
+            start = i + 1
+            stripped = new_text.strip(" ")
+            print("{}".format(stripped), end="")
+    if start < len(text):
+        remain = text[start:].strip()
+        print("{}".format(remain), end="")
