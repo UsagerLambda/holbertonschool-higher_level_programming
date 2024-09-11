@@ -19,3 +19,10 @@ TypeError: text must be a string
 <BLANKLINE>
 :
 <BLANKLINE>
+
+>>> text_indentation("      aaaaa   ")
+aaaaa
+
+>>> text_indentation("      aaaaa   ?")
+aaaaa   ?
+<BLANKLINE>
