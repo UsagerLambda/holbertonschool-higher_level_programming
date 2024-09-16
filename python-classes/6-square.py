@@ -31,6 +31,8 @@ class Square():
         """
         self.__size = size  # Private Attribute ("__")
         self.__position = position  # Private Attribute ("__")
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
