@@ -1,12 +1,30 @@
 #!/usr/bin/python3
 
-""" Define a empty class named Rectangle """
+"""
+This module defines a class named Rectangle.
+
+The Rectangle class represents a rectangle with a specified width and height.
+It includes methods to get and set these dimensions, ensuring that they are
+non-negative integers.
+
+The class includes the following methods:
+    - __init__(self, width=0, height=0): Initializes the rectangle with the given width and height.
+    - width(self): Getter for the width property.
+    - width(self, value): Setter for the width property.
+    - height(self): Getter for the height property.
+    - height(self, value): Setter for the height property.
+"""
 
 
 class Rectangle():
     """
-    A class used to represent a Rectangle
+    A class used to represent a rectangle.
+
+    Attributes:
+        width (int): The width of the rectangle. Defaults to 0.
+        height (int): The height of the rectangle. Defaults to 0.
     """
+
     def __init__(self, width=0, height=0):
         """
         Initialize the rectangle with width and height.
