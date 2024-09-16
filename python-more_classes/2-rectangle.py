@@ -8,7 +8,8 @@ It includes methods to get and set these dimensions, ensuring that they are
 non-negative integers.
 
 The class includes the following methods:
-    - __init__(self, width=0, height=0): Initializes the rectangle with the given width and height.
+    - __init__(self, width=0, height=0): Initializes the rectangle
+    with the given width and height.
     - width(self): Getter for the width property.
     - width(self, value): Setter for the width property.
     - height(self): Getter for the height property.
@@ -77,7 +78,8 @@ class Rectangle():
     @height.setter
     def height(self, value):
         """
-        Sets the height of the rectangle, ensuring it is a non-negative integer.
+        Sets the height of the rectangle, ensuring it is a
+        non-negative integer.
 
         Args:
             value (int): The height of the rectangle

@@ -93,3 +93,41 @@ class Rectangle():
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """
+        Calculate the area of the rectangle.
+
+        Returns: float: The area of the rectangle.
+        """
+        return self.width * self.height
+
+    def perimeter(self):
+        """
+        Calculate the perimeter of the rectangle.
+
+        Returns: float: The perimeter of the rectangle.
+        """
+        if self.width == 0 or self.height == 0:
+            return 0
+        return (self.width + self.height) * 2
+
+    def __str__(self):
+        """
+        Returns a string representation of the rectangle.
+
+        If either the width or the height is 0, returns an empty string.
+        Otherwise, returns a string representation of the rectangle,
+        where each line is filled with the '#' character, with the number
+        of lines corresponding to the height and the number of '#' characters
+        in each line corresponding to the width.
+
+        Returns:
+        str: A string representation of the rectangle.
+        """
+        if self.width == 0 or self.height == 0:
+            return ""
+        rectangle_lines = []
+        for _ in range(self.height):
+            rectangle_lines.append("#" * self.width)
+        return "\n".join(rectangle_lines)
