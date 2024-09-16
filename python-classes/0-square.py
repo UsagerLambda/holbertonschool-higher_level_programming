@@ -1,4 +1,4 @@
-#!/usr/bon/python3
+#!/usr/bin/python3
 
 """ A empty Class that defines a square """
 
