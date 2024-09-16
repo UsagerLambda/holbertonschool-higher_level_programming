@@ -79,9 +79,14 @@ class Square():
         """
         Check if the tuple is not fill with integer
         """
-        if not isinstance(value, tuple):
+        if not isinstance(value, tuple):  # Vérifie si value est un tuple
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.position = value
+        if len(value) != 2:  # Vérifie que le tuple contient bien 2 éléments
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(i, int) and i >= 0 for i in value):
+            # Vérifie que chaque élément du tuple est un entier et >= 0
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value  # Assigne la valeur à l'attribut privé
 
     def my_print(self):
         """
