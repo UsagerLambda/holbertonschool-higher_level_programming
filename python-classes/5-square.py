@@ -65,7 +65,7 @@ class Square():
     def my_print(self):
         """
         Print the square by printing '#' in the size of 'size'
-        
+
         if size == 0 just print a blankline
         """
         if self.__size != 0:
