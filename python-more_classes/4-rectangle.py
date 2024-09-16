@@ -144,4 +144,7 @@ class Rectangle():
             str: A string that represents the rectangle in a way that
             can be used to recreate it using eval().
         """
-        return "Rectangle({}, {})".format(self.height, self.width)
+        if self.height > self.width:
+            return "Rectangle({}, {})".format(self.width, self.height)
+        if self.height < self.width:
+            return "Rectangle({}, {})".format(self.height, self.width)
