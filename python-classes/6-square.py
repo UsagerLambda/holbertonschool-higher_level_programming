@@ -79,8 +79,9 @@ class Square():
         """
         Check if the tuple is not fill with integer
         """
-        if not isinstance(value, int):
+        if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.position = value
 
     def my_print(self):
         """
