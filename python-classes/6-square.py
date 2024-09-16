@@ -65,10 +65,20 @@ class Square():
 
     @property
     def position(self):
+        """
+        Getter for the 'position' attribute.
+
+        Returns:
+            tuple: The numbers of '_' to print
+            and the numbers of spaces to print.
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """
+        Check if the tuple is not fill with integer
+        """
         if not isinstance(value, int):
             raise TypeError("position must be a tuple of 2 positive integers")
 
