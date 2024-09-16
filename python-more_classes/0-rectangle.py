@@ -2,6 +2,7 @@
 
 """ Define a empty class named Rectangle """
 
+
 class Rectangle():
     """ The class is empty so we just pass """
     pass
