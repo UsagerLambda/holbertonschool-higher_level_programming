@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-""" Class square with private instance attribute 'size' """
+"""
+Class square with private instance attribute 'size'
+And check if size is a integer and not < 0
+"""
 
 
 class Square():
@@ -9,6 +12,12 @@ class Square():
         """
         'size' for the size of the square to initialize.
         The size is store as a private attribute.
+
+        The first condition check if size is a integer,
+        if not raise a TypeError
+
+        The second condition check if size not < 0,
+        if not raise a ValueError
         """
         self.__size = size  # Private Attribute ("__")
         if not isinstance(size, int):
