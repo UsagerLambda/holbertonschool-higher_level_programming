@@ -176,8 +176,8 @@ class Rectangle():
             rect_2 (Rectangle): The second rectangle to compare.
 
         Returns:
-            Rectangle: The rectangle with the larger area. If the areas are equal,
-                       returns rect_1.
+            Rectangle: The rectangle with the larger area.
+            If the areas are equal, returns rect_1.
 
         Raises:
             TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
