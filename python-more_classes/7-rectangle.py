@@ -120,6 +120,7 @@ class Rectangle():
         Returns a string representation of the rectangle.
 
         If either the width or the height is 0, returns an empty string.
+        Convert print_symbol into a string.
         Otherwise, returns a string representation of the rectangle,
         where each line is filled with the '#' character, with the number
         of lines corresponding to the height and the number of '#' characters
@@ -130,9 +131,10 @@ class Rectangle():
         """
         if self.width == 0 or self.height == 0:
             return ""
+        symbol = str(self.print_symbol)  # Convertie print_symbol en strings
         rectangle_lines = []
         for _ in range(self.height):
-            rectangle_lines.append(Rectangle.print_symbol * self.width)
+            rectangle_lines.append(symbol * self.width)
         return "\n".join(rectangle_lines)
 
     def __repr__(self):
