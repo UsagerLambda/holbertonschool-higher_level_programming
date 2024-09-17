@@ -206,6 +206,6 @@ class Rectangle():
             Rectangle: An instance of Rectangle
             where both height and width are equal to size.
         """
+        return cls(size, size)
         # 'cls' Représente la class elle même (Rectangle)
         # Un carré à la même hauteur & largeur donc size * size.
-        return cls(size, size)
