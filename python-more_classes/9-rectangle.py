@@ -168,6 +168,20 @@ class Rectangle():
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """
+        Compare two rectangles to determine which has the larger area.
+
+        Args:
+            rect_1 (Rectangle): The first rectangle to compare.
+            rect_2 (Rectangle): The second rectangle to compare.
+
+        Returns:
+            Rectangle: The rectangle with the larger area. If the areas are equal,
+                       returns rect_1.
+
+        Raises:
+            TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
@@ -181,5 +195,17 @@ class Rectangle():
 
     @classmethod
     def square(cls, size=0):
+        """
+        Create a new square with the specified size.
+
+        Args:
+            size (int, optional): The size of the sides of the square.
+            Default is 0.
+
+        Returns:
+            Rectangle: An instance of Rectangle
+            where both height and width are equal to size.
+        """
+        # 'cls' Représente la class elle même (Rectangle)
         # Un carré à la même hauteur & largeur donc size * size.
         return cls(size, size)
