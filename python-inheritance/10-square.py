@@ -95,6 +95,8 @@ class Square(Rectangle):
         """
         self.integer_validator("size", size)
         self.__size = size
+        # super() appelle __init__ de la classe parent (Rectangle)
+        # et lui donne size pour width & height
         super().__init__(self.__size, self.__size)
 
     def area(self):
