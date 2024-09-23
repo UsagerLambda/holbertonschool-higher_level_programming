@@ -17,6 +17,7 @@ class BaseGeometry:
     interger_validator(name: str, value, int)
         Validate that value is a positive integer, if not raise an Exception
     """
+
     def area(self):
         """
         Public method that raise an Exception
@@ -56,6 +57,7 @@ class Rectangle(BaseGeometry):
         __init__(width, height): Initializes a new rectangle
         with the given width and height.
     """
+
     def __init__(self, width, height):
         """
         Initializes a rectangle with a specified width and height.
