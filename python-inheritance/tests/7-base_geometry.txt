@@ -15,3 +15,7 @@ Traceback (most recent call last):
     ...
 TypeError: str must be an integer
 
+>>> bg.integer_validator("str", True)
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
