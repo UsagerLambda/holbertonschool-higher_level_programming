@@ -4,3 +4,13 @@
 
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
+
+>>> bg.integer_validator("less", -1)
+Traceback (most recent call last):
+    ...
+ValueError: less must be greater than 0
+
+>>> bg.integer_validator("str", "az")
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
