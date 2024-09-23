@@ -120,4 +120,4 @@ class Square(Rectangle):
         Returns:
             str: The area of the square as a string.
         """
-        return "{}".format(self.__size * self.__size)
+        return self.__size * self.__size
