@@ -5,7 +5,7 @@ for basic geometric shape operations.
 """
 
 
-class BaseGeometry():
+class BaseGeometry:
     """
     A class to represent basic geometric shapes.
 
@@ -75,15 +75,6 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-    def area(self):
-        """
-        Calculates the area of the rectangle.
-
-        Returns:
-            str: The area of the rectangle as a string.
-        """
-        return self.__width * self.__height
-
     def __str__(self):
         """
         Returns a string representation of the rectangle.
@@ -94,6 +85,15 @@ class Rectangle(BaseGeometry):
         """
         return '[{}] {}/{}'.format(__class__.__name__,
                                    self.__width, self.__height)
+
+    def area(self):
+        """
+        Calculates the area of the rectangle.
+
+        Returns:
+            str: The area of the rectangle as a string.
+        """
+        return self.__width * self.__height
 
 
 class Square(Rectangle):
@@ -116,9 +116,9 @@ class Square(Rectangle):
 
     def area(self):
         """
-        Calculates the area of the square.
+        Call the function area from the parent class
 
         Returns:
-            int: The area of the square as a int.
+            The area of the square.
         """
         return super().area()
