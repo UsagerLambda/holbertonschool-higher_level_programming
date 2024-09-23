@@ -38,7 +38,7 @@ class BaseGeometry():
             TypeError: If value is not an integer.
             ValueError: If value is less than or equal to 0.
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError(name + " must be an integer")
         if value <= 0:
             raise ValueError(name + " must be greater than 0")
@@ -68,7 +68,7 @@ class Rectangle(BaseGeometry):
             TypeError: If width or height is not an integer.
             ValueError: If width or height is less than or equal to 0.
         """
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
