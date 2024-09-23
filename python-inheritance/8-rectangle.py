@@ -5,7 +5,7 @@ for basic geometric shape operations.
 """
 
 
-class BaseGeometry():
+class BaseGeometry:
     """
     A class to represent basic geometric shapes.
 
