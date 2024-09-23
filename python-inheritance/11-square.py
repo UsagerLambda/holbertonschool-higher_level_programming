@@ -120,4 +120,4 @@ class Square(Rectangle):
         Returns:
         str: A formatted string representing the object.
         """
-        return f"[{self.__class__.__name__}] {self.__size}/{self.__size}"
+        return "[{}] {}/{}".format(self.__class__.__name__, self.__size, self.__size)

@@ -106,4 +106,4 @@ class Square(Rectangle):
         Returns:
             The area of the square.
         """
-        return super().area()
+        return "[{}] {}/{}".format(self.__class__.__name__, self.__size, self.__size)
