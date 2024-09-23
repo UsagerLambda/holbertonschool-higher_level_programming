@@ -14,3 +14,13 @@ ValueError: less must be greater than 0
 Traceback (most recent call last):
     ...
 TypeError: str must be an integer
+
+>>> bg.integer_validator("str", float('inf'))
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
+
+>>> bg.integer_validator("str", float('NaN'))
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
