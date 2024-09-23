@@ -97,7 +97,7 @@ class Square(Rectangle):
         self.__size = size
         # super() appelle __init__ de la classe parent (Rectangle)
         # et lui donne size pour width & height
-        super().__init__(size, size)
+        super().__init__(self.__size, self.__size)
 
     def area(self):
         """
