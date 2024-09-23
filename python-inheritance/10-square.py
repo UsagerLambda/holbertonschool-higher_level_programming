@@ -94,10 +94,10 @@ class Square(Rectangle):
             Must be a positive integer.
         """
         self.integer_validator('size', size)
-        self.__size = size
         # super() appelle __init__ de la classe parent (Rectangle)
         # et lui donne size pour width & height
         super().__init__(size, size)
+        self.__size = size
 
     def area(self):
         """
