@@ -118,6 +118,6 @@ class Square(Rectangle):
         Calculates the area of the square.
 
         Returns:
-            str: The area of the square as a string.
+            int: The area of the square as a int.
         """
         return self.__size * self.__size
