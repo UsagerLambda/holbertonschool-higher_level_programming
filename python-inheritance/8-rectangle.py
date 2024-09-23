@@ -8,14 +8,6 @@ for basic geometric shape operations.
 class BaseGeometry:
     """
     A class to represent basic geometric shapes.
-
-    Methods
-    -------
-    area():
-        Raises an Exception indicating that the area method is not implemented.
-
-    interger_validator(name: str, value, int)
-        Validate that value is a positive integer, if not raise an Exception
     """
 
     def area(self):
@@ -25,7 +17,7 @@ class BaseGeometry:
         Raises:
             Exception: "area() is not implemented"
         """
-        raise Exception("area() is not implemented")
+        raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
         """
@@ -48,14 +40,6 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     """
     Represents a rectangle, inheriting from the BaseGeometry class.
-
-    Attributes:
-        __width (int): The width of the rectangle.
-        __height (int): The height of the rectangle.
-
-    Methods:
-        __init__(width, height): Initializes a new rectangle
-        with the given width and height.
     """
 
     def __init__(self, width, height):
