@@ -81,10 +81,10 @@ class Rectangle(Shape):
         return (self.width + self.height) * 2
 
 
-def shape_info(Shape):
+def shape_info(shape):
     """
     Displays the shape's information: its area and perimeter.
     :param Shape: Instance of a shape (must inherit from the Shape class).
     """
-    print("Area : {}".format(Shape.area()))
-    print("Perimeter : {}".format(Shape.perimeter()))
+    print("Area : {}".format(shape.area()))
+    print("Perimeter : {}".format(shape.perimeter()))
