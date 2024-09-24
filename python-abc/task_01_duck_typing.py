@@ -86,5 +86,5 @@ def shape_info(shape):
     Displays the shape's information: its area and perimeter.
     :param Shape: Instance of a shape (must inherit from the Shape class).
     """
-    print("Area : {}".format(shape.area()))
-    print("Perimeter : {}".format(shape.perimeter()))
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
