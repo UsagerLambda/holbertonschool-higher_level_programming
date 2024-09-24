@@ -23,3 +23,8 @@ class Dragon(SwimMixin, FlyMixin):
     def roar(self):
         """Makes the dragon roar."""
         print("The dragon roars")
+
+draco = Dragon()
+draco.swim()
+draco.fly()
+draco.roar()
