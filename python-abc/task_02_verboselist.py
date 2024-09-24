@@ -11,8 +11,7 @@ class VerboseList(list):
         print("Extended the list with [{}] items.".format(len(iterable)))
 
     def remove(self, item):
-        # vérif si la list est vide et que l'élément est dans la liste
-        if not self and item in self:
+        if item in self:
             super().remove(item)
             print("Removed [{}] from the list.".format(item))
 
