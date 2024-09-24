@@ -7,10 +7,12 @@ class Animal(ABC):
     def sound(self):
         pass
 
+
 class Dog(Animal):
     def sound(self):
         super().sound()  # Appelle la méthode 'sound' du parent
         return "Bark"
+
 
 class Cat(Animal):
     def sound(slef):
