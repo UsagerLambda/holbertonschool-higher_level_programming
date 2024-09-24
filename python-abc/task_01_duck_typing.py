@@ -50,7 +50,7 @@ class Circle(Shape):
         Calculates and returns the perimeter of the circle.
         :return: Perimeter of the circle.
         """
-        return (2 * self.radius) * pi
+        return abs((2 * self.radius) * pi)
 
 
 class Rectangle(Shape):
