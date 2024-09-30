@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""class Student with public attributes"""
 
 
 class Student:
