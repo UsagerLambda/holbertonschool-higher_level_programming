@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""print the content of a file define by filename"""
 
 
 def read_file(filename=""):
