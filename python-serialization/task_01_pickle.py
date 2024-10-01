@@ -16,6 +16,7 @@ class CustomObject:
         """
         Prints the attributes of the object in a formatted string.
         """
+
         print("Name: {}\nAge: {}\nIs Student: {}"
               .format(self.name, self.age, self.is_student))
 
@@ -23,15 +24,16 @@ class CustomObject:
         """
         Serializes the object and saves it to a file using pickle.
         """
+
         with open(filename, "wb") as file:
             pickle.dump(self, file)
-        
+
     @classmethod
     def deserialize(cls, filename):
         """
         Loads a serialized object from a file.
         """
+
         with open(filename, "rb") as file:
             loaded_data = pickle.load(file)
         return loaded_data
-
