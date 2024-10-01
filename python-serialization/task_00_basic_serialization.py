@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Importation du module pickle qui permet la sérialisation
-et la désérialisation d'objets Python.
-"""
 import pickle
 
 
