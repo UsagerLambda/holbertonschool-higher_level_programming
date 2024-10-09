@@ -3,6 +3,7 @@ from flask import jsonify
 
 
 app = Flask(__name__)
+
 users = {
     "jane":
         {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
@@ -13,16 +14,16 @@ users = {
 
 @app.route("/")
 def home():
-    return "<p>Welcome to the Flask API!<p>"
+    return "Welcome to the Flask API!"
 
 
 @app.route("/data")
-def get_username():
+def data():
     return jsonify(list(users.keys()))
 
 
 @app.route("/status")
-def get_OK():
+def status():
     return 'OK'
 
 
@@ -31,7 +32,7 @@ def get_user(username):
     if username in users:
         return jsonify(users[username])
     else:
-        return {"error": "User not found"}
+        return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=['POST'])
@@ -43,8 +44,12 @@ def add_user():
 
         # Vérifier si le champ 'username' est présent et s'il existe déja
         username = user_data.get('username')
+
+        if not username:
+            return jsonify({"error": "Username is required"}), 400
+
         if username in users:
-            return jsonify({"message": "User already exists"})
+            return jsonify({"message": "User already exists"}), 409
 
         # Ajouter l'utilisateur au dictionnaire
         users[username] = user_data
@@ -53,4 +58,4 @@ def add_user():
         return jsonify({
             "message": "User added",
             "user": user_data
-        })
+        }), 201
