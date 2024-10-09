@@ -59,3 +59,7 @@ def add_user():
             "message": "User added",
             "user": user_data
         }), 201
+
+
+if __name__ == "__main__":
+    app.run()
