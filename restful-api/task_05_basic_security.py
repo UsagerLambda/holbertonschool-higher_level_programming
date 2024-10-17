@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 app.config["SECRET_KEY"] = "test"
-app.config['JWT_SECRET_KEY'] = "x93\x9b1\x1c\x8fg1\xe5\xfcd\xec]"
+app.config['JWT_SECRET_KEY'] = "test"
 
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
@@ -41,6 +41,10 @@ def basic_protected():
 @app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()  # recupère les données JSON du payload
+
+    if not data or "username" not in data or "password" not in data:
+        return jsonify({"error": "Missing username or password"}), 400
+
     username = data.get("username")
     password = data.get("password")
 
@@ -65,6 +69,10 @@ def jwt_protected():
 @jwt_required()
 def admin_only():
     jwt_data = get_jwt_identity()
+
+    if "role" not in jwt_data:
+        return jsonify({"error": "Invalid token structure"}), 403
+
     if jwt_data['role'] == 'admin':
         return "Admin Access: Granted", 200
     else:
@@ -97,4 +105,4 @@ def handle_needs_fresh_token_error(err):
 
 
 if __name__ == '__main__':
-    app.run
+    app.run()
