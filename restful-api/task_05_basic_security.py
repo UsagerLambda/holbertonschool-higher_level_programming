@@ -35,28 +35,26 @@ def verify_password(username, password):
 @app.route('/basic-protected')
 @auth.login_required
 def basic_protected():
-    return jsonify({"message": "Basic Auth: Access Granted"})
+    return "Basic Auth: Access Granted", 200
 
 
 @app.route('/login', methods=['POST'])
 def login():
-    data = request.get_json()  # recupère les données JSON du payload
+    username = request.json["username"]
+    password = request.json["password"]
 
-    if not data or "username" not in data or "password" not in data:
-        return jsonify({"error": "Missing username or password"}), 400
+    user = users.get(username)
 
-    username = data.get("username")
-    password = data.get("password")
+    if not user:
+        return jsonify({"error": "Invalid credentials"}), 401
 
-    # Vérifie les infos d'identification
-    if username in users and check_password_hash(users[username]
-                                                 ['password'], password):
-        # Si infos valide stock le nom d'utilisateur et son rôle
-        user_info = {"username": username, "role": users[username]['role']}
-        #  Génère un token qui contient les infos de user_info
-        access_token = create_access_token(identity=user_info)
-        return jsonify(access_token=access_token), 200
-    return jsonify({"error": "Invalid credentials"}), 401
+    if not check_password_hash(user["password"], password):
+        return jsonify({"error": "Invalid credentials"}), 401
+
+    access_token = create_access_token(
+        identity={"username": username, "role": user["role"]}
+    )
+    return jsonify(access_token=access_token), 200
 
 
 @app.route('/jwt-protected', methods=['GET'])
@@ -69,9 +67,6 @@ def jwt_protected():
 @jwt_required()
 def admin_only():
     jwt_data = get_jwt_identity()
-
-    if "role" not in jwt_data:
-        return jsonify({"error": "Invalid token structure"}), 403
 
     if jwt_data['role'] == 'admin':
         return "Admin Access: Granted", 200
