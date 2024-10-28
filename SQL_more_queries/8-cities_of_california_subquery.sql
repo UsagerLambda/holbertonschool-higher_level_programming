@@ -1,2 +1,4 @@
 -- list all the cities of california that can be found in the database
-SELECT * FROM cities WHERE state_id = 1;
+SELECT id, name FROM cities -- id dans cities
+WHERE state_id = (SELECT id FROM states WHERE name = 'California') -- Renvoie l'id de California dans states
+ORDER BY id ASC; -- trié de manière ascendante
