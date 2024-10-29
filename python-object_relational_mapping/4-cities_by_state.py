@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Module pour afficher toutes les entrées de la table `states`
-triées par `id` dans une base de données MySQL.
+script that lists all cities from the database hbtn_0e_4_usa
 """
 
 import MySQLdb
@@ -33,4 +32,3 @@ if __name__ == "__main__":
 
     cursor.close()
     conn.close()
-    
