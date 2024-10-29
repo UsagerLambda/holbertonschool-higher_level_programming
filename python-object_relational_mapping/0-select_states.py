@@ -14,9 +14,9 @@ if __name__ == "__main__":
 
     conn = MySQLdb.connect(
         host='localhost',
-        user='root',
-        password='root',
-        db='hbtn_0e_0_usa',
+        user=mysql_username,
+        password=mysql_password,
+        db=database_name,
         port=3306
         )
 
