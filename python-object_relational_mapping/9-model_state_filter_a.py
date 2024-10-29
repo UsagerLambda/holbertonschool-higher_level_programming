@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # Crée une instance de la class Session
     session = Session()
 
-    # (SELECT * FROM states ORDER BY id ASC LIMIT 1;)
+    # (SELECT * FROM states WHERE name LIKE '%a%' ORDER BY id ASC;)
     states = session.query(State).filter(State.name.like('%a%')) \
         .order_by(asc(State.id)).all()
 
