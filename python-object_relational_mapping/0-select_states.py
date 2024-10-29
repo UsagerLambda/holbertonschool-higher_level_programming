@@ -12,7 +12,6 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-
     conn = MySQLdb.connect(
         host='localhost',
         user=mysql_username,
