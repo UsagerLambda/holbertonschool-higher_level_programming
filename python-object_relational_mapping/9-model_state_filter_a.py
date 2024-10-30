@@ -19,8 +19,12 @@ if __name__ == "__main__":
     session = Session()
 
     # (SELECT * FROM states WHERE name LIKE '%a%' ORDER BY id ASC;)
-    states = session.query(State).filter(State.name.like('%a%')) \
-        .order_by(State.id.asc()).all()
+    states = (
+        session.query(State)
+        .filter(State.name.like('%a%'))
+        .order_by(State.id.asc())
+        .all()
+        )
 
     if states:
         for state in states:
