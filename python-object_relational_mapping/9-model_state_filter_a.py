@@ -21,16 +21,13 @@ if __name__ == "__main__":
     # (SELECT * FROM states WHERE name LIKE '%a%' ORDER BY id ASC;)
     states = (
         session.query(State)
-        .filter(State.name.contains('a'))
+        .filter(State.name.like('%a%'))
         .order_by(State.id.asc())
         .all()
         )
 
-    if states:
-        for state in states:
-            print(f"{state.id}: {state.name}")
-    else:
-        print("Nothing")
+    for state in states:
+        print(f"{state.id}: {state.name}")
 
     # Fermer l'instance
     session.close()
