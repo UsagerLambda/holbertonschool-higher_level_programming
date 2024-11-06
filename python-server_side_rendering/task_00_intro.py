@@ -2,14 +2,17 @@ import os
 
 
 def generate_invitations(template, attendees):
+    """Check the type of input"""
     # ============================Conditions================================ #
 
     if not isinstance(template, str):
-        raise TypeError("Error: The template must be a string.")
+        print("Error: The template must be a string.")
+        return
 
     if not isinstance(attendees, list) or not all(
             isinstance(item, dict) for item in attendees):
-        raise TypeError("Error: Attendees must be a list of dictionaries.")
+        print("Error: Attendees must be a list of dictionaries.")
+        return
 
     if not template:
         print("Template is empty, no output files generated.")
