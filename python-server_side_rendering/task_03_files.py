@@ -74,7 +74,7 @@ def display_products():
         return "File not found.", 404
 
     except Exception as e:
-        return f"An error occurred: {str(e)}", 500
+        return f"An error occurred: {e}", 500
 
     return render_template('product_display.html', products=products)
 
