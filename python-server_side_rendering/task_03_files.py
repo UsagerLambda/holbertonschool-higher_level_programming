@@ -43,7 +43,7 @@ def display_products():
 
     # Si la source n'est pas json ou csv
     if source not in ['json', 'csv']:
-        message = "Invalid source, must be 'json' or 'csv'"
+        message = "Wrong source"
 
     try:
         if source == 'json':
