@@ -38,10 +38,12 @@ def display_products():
     source = request.args.get('source', '')
     # récupère l'id
     product_id = request.args.get('id', None)
+    message = None
+    products = []
 
     # Si la source n'est pas json ou csv
     if source not in ['json', 'csv']:
-        return "Invalid source, must be 'json' or 'csv'", 400
+        message = "Invalid source, must be 'json' or 'csv'"
 
     try:
         if source == 'json':
@@ -68,15 +70,15 @@ def display_products():
                     product['id']) == product_id]
             # Si la correspondance n'existe pas
             if not products:
-                return "Product not found.", 404
+                message = "Product not found."
 
     except FileNotFoundError:
-        return "File not found.", 404
+        message = "File not found."
 
     except Exception as e:
-        return f"An error occurred: {e}", 500
+        message = f"An error occurred: {e}"
 
-    return render_template('product_display.html', products=products)
+    return render_template('product_display.html', products=products, message=message)
 
 
 if __name__ == '__main__':
