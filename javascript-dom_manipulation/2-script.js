@@ -1,4 +1,3 @@
-function myFunction() {
-    var element = document.getElementById("header");
-    element.classList.add("red");
-  }
+document.getElementById('red_header').onclick = () => {
+    document.querySelector('header').classList.add('red');
+  };
